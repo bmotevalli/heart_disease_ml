@@ -1,1 +1,2 @@
 export const TOGGLE_SIDEMENU = "TOGGLE_SIDEMENU";
+export const SET_PARAM_VALUE = "SET_PARAM_VALUE";
