@@ -23,8 +23,12 @@ class Navbar extends Component {
           style={{ marginLeft: "30px" }}
         >
           <ul className="navbar-nav mr-auto">
-            <NavigationItem link="/" exact>
+            <NavigationItem link="/home" exact>
               Home
+            </NavigationItem>
+
+            <NavigationItem link="/analysis" exact>
+              Analysis
             </NavigationItem>
           </ul>
         </div>
