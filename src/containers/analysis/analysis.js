@@ -30,35 +30,48 @@ class Analysis extends Component {
 
     render() { 
 
-        let heartDiseaseRes = <div></div>        
+        let txtDescription = (
+            <React.Fragment>
+                <h3>Input Parameters</h3>
+                <p>To assess the condition of the patient the following parameters are required. The <b>Age</b> and <b>Sex</b> 
+                 of the patient should be provided. </p>
+            </React.Fragment>
+        )
+
+
+        let heartDiseaseRes = <div></div>    
+        
+        const widthPb = "200px"
+        const marginTop = "10px"
+        const marginLeft = "50px"
 
         if (this.state.heartDisease){
             let styleWidth = this.state.heartDisease.toString() + "%";
-            let valNow = this.state.heartDisease.toString();
+            let valNow = this.state.heartDisease.toString();            
             if (this.state.heartDisease < 25){
                 heartDiseaseRes = (
-                    <div class="progress">
+                    <div class="progress" style={{width: widthPb , marginTop: marginTop, marginLeft: marginLeft}}>
                         <div class="progress-bar bg-success" role="progressbar" style={{width:styleWidth}} aria-valuenow={valNow} aria-valuemin="0" aria-valuemax="100">{valNow}%</div>
                     </div>
                 )
             }
             else if (this.state.heartDisease < 50) {
                 heartDiseaseRes = (
-                    <div class="progress">
+                    <div class="progress" style={{width: widthPb, marginTop: marginTop, marginLeft: marginLeft}}>
                         <div class="progress-bar bg-info" role="progressbar" style={{width:styleWidth}} aria-valuenow={valNow} aria-valuemin="0" aria-valuemax="100">{valNow}%</div>
                     </div>
                 )
             }
             else if (this.state.heartDisease < 75) {
                 heartDiseaseRes = (
-                    <div class="progress">
+                    <div class="progress" style={{width: widthPb, marginTop: marginTop, marginLeft: marginLeft}}>
                         <div class="progress-bar bg-warning" role="progressbar" style={{width:styleWidth}} aria-valuenow={valNow} aria-valuemin="0" aria-valuemax="100">{valNow}%</div>
                     </div>
                 )
             }
             else {
                 heartDiseaseRes = (
-                    <div class="progress">
+                    <div class="progress" style={{width: widthPb, marginTop: marginTop, marginLeft: marginLeft}}>
                         <div class="progress-bar bg-danger" role="progressbar" style={{width:styleWidth}} aria-valuenow={valNow} aria-valuemin="0" aria-valuemax="100">{valNow}%</div>
                     </div>
                 )
@@ -66,8 +79,11 @@ class Analysis extends Component {
         }
 
         return ( 
-            <div class="row">
-                <div style={{marginTop: "50px", alignContent:"center"}}>
+            <div >
+                <div style={{marginTop: "50px", marginLeft:"50px"}}>
+                    {txtDescription}
+                </div>
+                <div class="row" style={{marginTop: "50px", alignContent:"center"}}>
                     <table>
                         {this.props.lstInps.map((item, index) => {
                             return (
@@ -75,16 +91,12 @@ class Analysis extends Component {
                             )
                         })}
                         
-                    </table>
+                    </table> 
+                    <div class="row">
+                        <button onClick={this.onPredict} type="button" class="btn btn-primary" style={{height:"40px", width: "80px", marginLeft: marginLeft, marginTop: marginTop, marginBottom: "25px"}}>Predict</button>
+                        {heartDiseaseRes}   
+                    </div>     
                 </div>
-                <div style={{marginTop: "50px", marginLeft:"50px", alignContent:"center"}}>
-                    <h3>Input Parameters</h3>
-                    <p><b>Age</b> is the age of the patient. etc.</p>
-
-                    <button onClick={this.onPredict} type="button" class="btn btn-primary" style={{height:"40px", marginTop: "25px", marginBottom: "25px"}}>Predict</button>
-                    {heartDiseaseRes}
-                </div>
-                
             </div>
             
          );
