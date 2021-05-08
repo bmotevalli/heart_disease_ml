@@ -12,8 +12,6 @@ class InputComp extends Component {
     }
 
     render() { 
-
-        console.log(this.props.para)
         let inp = <input name={this.props.para.name} value={this.props.para.value} onChange={this.onTxtChange}/>
         if (this.props.para.type === "select") {
             inp =(<select onChange={this.onTxtChange} value={this.props.para.value}>
