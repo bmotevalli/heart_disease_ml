@@ -16,12 +16,7 @@ class SideMenu extends Component {
         icon: faHome,
         link: ST.ROUTES.MAINVIEW.HOME.PATH
       },
-       {
-        header: "Mona",
-        icon: faHome,
-        link: ST.ROUTES.MAINVIEW.HOME.PATH
-      },
-      {
+            {
         header: "Analysis",
         icon: faHeartbeat,
         link: ST.ROUTES.MAINVIEW.MAP.PATH
