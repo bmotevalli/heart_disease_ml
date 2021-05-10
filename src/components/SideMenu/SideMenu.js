@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { faHome, faMap, faBars, faHeartbeat } from "@fortawesome/free-solid-svg-icons";
+import { faHome, faMap, faBars, faHeartbeat,faQuestionCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import SideMenuItem from "./SideMenuItem/SideMenuItem";
 import classes from "./SideMenu.module.css";
@@ -20,7 +20,12 @@ class SideMenu extends Component {
         header: "Analysis",
         icon: faHeartbeat,
         link: ST.ROUTES.MAINVIEW.MAP.PATH
-      }
+      },
+      {
+        header: "Help",
+        icon: faQuestionCircle,
+        link: ST.ROUTES.MAINVIEW.Help.PATH
+      },
     ]
   };
   

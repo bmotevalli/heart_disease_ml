@@ -30,6 +30,10 @@ class Navbar extends Component {
             <NavigationItem link="/analysis" exact>
               Analysis
             </NavigationItem>
+
+            <NavigationItem link="/Help" exact>
+              Help
+            </NavigationItem>
           </ul>
         </div>
       </nav>
